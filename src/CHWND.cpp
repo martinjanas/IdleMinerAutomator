@@ -36,8 +36,8 @@ DWORD CHWND::GetRandomDelay(int delay_min, int delay_max)
 
 void CHWND::RandomDelay()
 {
-	int delay_min = 4000;
-	int delay_max = 6000;
+	int delay_min = 6000;
+	int delay_max = 8000;
 
 	DWORD ms = GetRandomDelay(delay_min, delay_max);
 
@@ -48,8 +48,8 @@ void CHWND::RandomDelay()
 
 void CHWND::RandomDelayNoPrintf()
 {
-	int delay_min = 4000;
-	int delay_max = 6000;
+	int delay_min = 6000;
+	int delay_max = 8000;
 
 	DWORD ms = GetRandomDelay(delay_min, delay_max);
 
@@ -88,7 +88,7 @@ void CHWND::SendStringNoPrintf(std::string msg)
 	RandomDelayNoPrintf();
 }
 
-void CHWND::SendStringSmallDelay(std::string msg, DWORD delay)
+void CHWND::SendStringSmallDelay(std::string msg, DWORD delay = 1000)
 {
 	SendMessage(hwnd, WM_ACTIVATE, WA_ACTIVE, 1);
 	for (int i = 0; i < msg.length(); i++)

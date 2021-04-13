@@ -33,7 +33,7 @@ public:
 	void RandomDelayNoPrintf();
 	void SendString(std::string msg);
 	void SendStringNoPrintf(std::string msg);
-	void SendStringSmallDelay(std::string msg, DWORD delay = 1000);
+	void SendStringSmallDelay(std::string msg, DWORD delay);
 
 private:
 	HWND hwnd = nullptr;

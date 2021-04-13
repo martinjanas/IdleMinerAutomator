@@ -11,23 +11,46 @@
 * 
 */
 
+
+std::random_device rdevice;
+std::mt19937 generator(rdevice());
+
+DWORD GetRandomBiggerDelay(int delay_min, int delay_max)
+{
+	std::uniform_int_distribution<int> delay(delay_min, delay_max);
+
+	return delay(generator);
+}
+
+void RandomBiggerDelay() //Will sleep from 15 - 25 seconds
+{
+	int delay_min = 15;
+	int delay_max = 25;
+
+	DWORD s = GetRandomBiggerDelay(delay_min, delay_max);
+
+	printf("delay: %i %s\n", s, s == 1 ? "second" : "seconds");
+
+	std::this_thread::sleep_for(std::chrono::seconds(s));
+}
+
 int main()
 {
 	HWND hwnd = FindWindowA(NULL, "#hello - Discord");
 	CHWND* _hwnd = new CHWND(hwnd);
 
 	std::thread focus_thread(&_main::focus, hwnd);
-	Sleep(5000);
+	Sleep(7000);
 	std::thread quiz_thread(&_main::quiz, hwnd, _hwnd);
-	Sleep(15000);
+	RandomBiggerDelay();
 	std::thread rage_thread(&_main::rage, hwnd, _hwnd);
 	Sleep(7000);
 	std::thread wings_thread(&_main::wings, hwnd, _hwnd);
-	Sleep(7000);
+	RandomBiggerDelay();
 	std::thread fish_thread(&_main::fish, hwnd, _hwnd);
 	Sleep(7000);
 	std::thread hunt_thread(&_main::hunt, hwnd, _hwnd);
-	Sleep(7000);
+	RandomBiggerDelay();
 	std::thread hourly_thread(&_main::hourly, hwnd, _hwnd);
 	Sleep(7000);
 	std::thread main_thread(&_main::main_function, hwnd, _hwnd);
