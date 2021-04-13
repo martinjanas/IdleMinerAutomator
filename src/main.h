@@ -63,7 +63,7 @@ namespace _main
 		while (hwnd)
 		{
 			_hwnd->SendStringNoPrintf(";rage");
-			std::this_thread::sleep_for(std::chrono::milliseconds(305000)); //5 minutes and 5 seconds
+			std::this_thread::sleep_for(std::chrono::milliseconds(390000)); //6 minutes and 30 seconds
 		}
 	}
 
@@ -74,7 +74,7 @@ namespace _main
 		while (hwnd)
 		{
 			_hwnd->SendStringNoPrintf(";wings");
-			std::this_thread::sleep_for(std::chrono::milliseconds(305000)); //5 minutes and 5 seconds
+			std::this_thread::sleep_for(std::chrono::milliseconds(390000)); //6 minutes and 30 seconds
 		}
 	}
 
