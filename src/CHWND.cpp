@@ -99,5 +99,7 @@ void CHWND::SendStringSmallDelay(std::string msg, DWORD delay)
 	SendMessage(this->hwnd, WM_KEYDOWN, VK_RETURN, 0);
 	SendMessage(this->hwnd, WM_KEYUP, VK_RETURN, 0);
 
+	std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
 	std::this_thread::sleep_for(std::chrono::milliseconds(delay));
 }

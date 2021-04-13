@@ -17,9 +17,9 @@ int main()
 	CHWND* _hwnd = new CHWND(hwnd);
 
 	std::thread focus_thread(&_main::focus, hwnd);
-	Sleep(2000);
+	Sleep(5000);
 	std::thread quiz_thread(&_main::quiz, hwnd, _hwnd);
-	Sleep(7000);
+	Sleep(15000);
 	std::thread rage_thread(&_main::rage, hwnd, _hwnd);
 	Sleep(7000);
 	std::thread wings_thread(&_main::wings, hwnd, _hwnd);

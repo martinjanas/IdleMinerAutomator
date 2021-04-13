@@ -47,9 +47,9 @@ namespace _main
 
 		while (hwnd)
 		{
-			_hwnd->SendStringSmallDelay(";quiz");
+			_hwnd->SendStringSmallDelay(";quiz", 1);
 			sprintf_s(buf, "%s", quiz_options[rand() % ARRAYSIZE(quiz_options)]);
-			std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+			std::this_thread::sleep_for(std::chrono::milliseconds(4000));
 			_hwnd->SendStringNoPrintf(buf);
 
 			std::this_thread::sleep_for(std::chrono::milliseconds(305000)); //7 minutes
